@@ -1,6 +1,7 @@
 let path = require('path');
 
 module.exports = {
+    mode : 'development',
     entry : {
         'tststlib' : __dirname + '/build/export.graph.js'
     },
