@@ -24,7 +24,7 @@ module.exports = {
     plugins : [
         new DtsBundleWebpack({
             name : "tststlib",
-            main : 'dist/dts/ui-base.d.ts',
+            main : 'dist/**/*.d.ts',
             out : 'tststlib.d.ts',
             removeSource : false,
             outputAsModuleFolder : true
