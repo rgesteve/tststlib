@@ -1,11 +1,9 @@
 {
-  "name": "tststlib",
+  "name": "tststlib-example",
   "version": "0.0.1",
   "description": "End-to-end typescript-based library used in the browser",
-  "browser": "dist/js/tststlib.js",
+  "main": "index.js",
   "scripts": {
-    "build": "npx webpack",
-    "clean" : "npx rimraf dist/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "R.G.Esteves",
@@ -16,5 +14,8 @@
     "typescript": "^3.1.3",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "tststlib": "file:.."
   }
 }
