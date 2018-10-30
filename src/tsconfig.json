@@ -6,7 +6,7 @@
         "experimentalDecorators": true,
         "sourceMap" : true,
         "declaration" : true,
-        "declarationDir" : "../dist/dts"
+        "declarationDir" : "../dist"
     },
     "exclude" : [
         "node_modules"

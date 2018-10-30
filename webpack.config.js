@@ -1,10 +1,12 @@
 let path = require('path');
-const DtsBundleWebpack = require('dts-bundle-webpack');
+// const DtsBundleWebpack = require('dts-bundle-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode : 'development',
     entry : {
-        'tststlib' : __dirname + '/build/export.graph.js'
+        //'tststlib' : __dirname + '/build/export.graph.js'
+        'tststlib' : __dirname + '/build/export.chart.js'
     },
     output : {
         path : path.resolve(__dirname, 'dist'),
@@ -22,12 +24,17 @@ module.exports = {
         ]
     },
     plugins : [
-        new DtsBundleWebpack({
-            name : "tststlib",
-            main : 'dist/**/*.d.ts',
-            out : 'tststlib.d.ts',
-            removeSource : false,
-            outputAsModuleFolder : true
-        })
+//        new DtsBundleWebpack({
+//            name : "tststlib",
+//            main : 'dist/**/*.d.ts',
+//            out : 'tststlib.d.ts',
+//            removeSource : false,
+//            outputAsModuleFolder : true
+//        })
+        new CopyWebpackPlugin([
+            { from : 'src/index.d.ts', to : '.'}
+        ])
+       
     ]
+    
 }
