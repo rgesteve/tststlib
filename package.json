@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "description": "End-to-end typescript-based library used in the browser",
   "browser": "dist/js/tststlib.js",
+  "types" : "dist/dts/tststlib.d.ts",
   "scripts": {
     "build": "npx webpack",
-    "clean" : "npx rimraf dist/*",
+    "clean": "npx rimraf dist/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "R.G.Esteves",
   "license": "ISC",
   "devDependencies": {
+    "dts-bundle-webpack": "^1.0.1",
     "rimraf": "^2.6.2",
     "ts-loader": "^5.2.2",
     "typescript": "^3.1.3",

@@ -1,4 +1,5 @@
 let path = require('path');
+const DtsBundleWebpack = require('dts-bundle-webpack');
 
 module.exports = {
     mode : 'development',
@@ -16,8 +17,17 @@ module.exports = {
     },
     module : {
         rules : [
-            { test: /\.tsx?$/, loader: 'ts-loader' }
+            { test: /\.tsx?$/,   loader: 'ts-loader' },
+            { test: /^\.d\.ts$/, loader : 'ignore-loader'}
         ]
     },
-    plugins : []
+    plugins : [
+        new DtsBundleWebpack({
+            name : "tststlib",
+            main : 'dist/dts/ui-base.d.ts',
+            out : 'tststlib.d.ts',
+            removeSource : false,
+            outputAsModuleFolder : true
+        })
+    ]
 }
